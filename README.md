@@ -4,8 +4,11 @@
 
 ## Overview
 
-**PaperHub** is a web-based tool designed to monitor and track the medium- to long-term impact of scientific papers. Often, research papers with significant societal potential gain momentary media attention, but it's challenging to keep up with their actual influence and application in the scientific community over time. PaperHub aims to bridge this gap by providing a system that tracks citations, evaluates credibility, measures media impact, and notifies users of notable developments.
+In the scientific world, groundbreaking papers frequently make headlines, hailed for their potential to revolutionize medicine, technology, and society. However, many of these "potentially useful" studies never progress beyond initial buzz and promises, leaving their real-world impact uncertain. This disconnect between scientific potential and tangible societal benefit often goes unnoticed due to the difficulty in tracking these developments over time.
 
+**PaperHub** aims to bridge this gap by providing a systematic way to monitor the long-term trajectory of scientific papers. It focuses on measuring a paper’s influence beyond its initial publication, tracking its adoption, real-world applications, and ongoing scholarly discussion. By aggregating data on citations, media mentions, and credibility metrics, PaperHub empowers researchers, journalists, and enthusiasts to cut through the hype, identify truly impactful research, and follow its journey from potential to practice.
+
+By shedding light on the true influence of scientific research, PaperHub seeks to ensure that society's attention is focused on developments that truly matter, helping to promote genuine innovation and progress.
 ## Key Features
 
 - **Citation Tracking:** Monitor the citation count of research papers to measure their impact within the scientific community.
