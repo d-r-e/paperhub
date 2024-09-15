@@ -1,0 +1,5 @@
+Django==5.1.1
+django-rest-framework
+django-filter
+celery
+psycopg[binary]

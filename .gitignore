@@ -1,3 +1,33 @@
+# credentials
+.env
+*.key
+*.pem
+
+data/
+
+
+# python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+*.pywz
+
+# django
+*.log
+*.pot
+
+# node
+node_modules
+npm-debug.log
+
+# vscode
+.vscode
+*.code-workspace
+
+
+
 # Logs
 logs
 *.log

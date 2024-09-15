@@ -1,0 +1,49 @@
+services:
+
+  valkey:
+    image: valkey/valkey:8.0-alpine
+    container_name: valkey
+    env_file:
+      - .env
+    volumes:
+      - ./data/redis:/data
+    command: redis-server --requirepass ${REDIS_PASSWORD}
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postgres:
+    image: postgres:16-alpine
+    env_file:
+      - .env
+    container_name: postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  django:
+    image: paperphub
+    ports:
+      - "5000:5000"
+    build:
+      context: django
+      dockerfile: Dockerfile
+    volumes:
+      - ./django:/app
+    depends_on:
+      valkey:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    env_file:
+      - .env
